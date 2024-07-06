@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uiux/catalouge.dart';
 import 'package:uiux/sign1/signup.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Signup1()
+      home: Catalouge()
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uiux/TopicBox.dart';
 import 'package:uiux/sign1/signup.dart';
+import 'package:uiux/styleslist/signlist.dart';
 
 class Catalouge extends StatefulWidget {
   const Catalouge({super.key});
@@ -18,15 +19,15 @@ class _CatalougeState extends State<Catalouge> {
       },
       child: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(85),
+          preferredSize:const Size.fromHeight(85),
           child: AppBar(
             automaticallyImplyLeading: false,
             centerTitle: true,
             backgroundColor: Colors.grey.shade800,
-            title: Row(
+            title:const Row(
               children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 25),
+                    padding:  EdgeInsets.only(top: 25),
                     child: Text(  
                     'Catalogue',
                           style: TextStyle(
@@ -44,20 +45,22 @@ class _CatalougeState extends State<Catalouge> {
             ),
         ),
         backgroundColor: Colors.grey.shade500,
-        body:Container(
-          child: Column(
-            children: [
-              SizedBox(height: 20),
-                TopicBox(title: 'Signup UI', onTap: () {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Signup1()));
-                }),
-                SizedBox(height: 10),
-                TopicBox(title: 'OTP UI', onTap: (){} ),
-                SizedBox(height: 10),
-                TopicBox(title: 'Home UI', onTap: () {}),
-                SizedBox(height: 10),
-                TopicBox(title: 'Chat UI', onTap: () {}),
-            ],
+        body:SingleChildScrollView(
+          child: Container(
+            child: Column(
+              children: [
+                SizedBox(height: 50),
+                  TopicBox(title: 'Signup UI', onTap: () {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Signlist()));
+                  }),
+                  SizedBox(height: 15),
+                  TopicBox(title: 'OTP UI', onTap: (){} ),
+                  SizedBox(height: 15),
+                  TopicBox(title: 'Home UI', onTap: () {}),
+                  SizedBox(height: 15),
+                  TopicBox(title: 'Chat UI', onTap: () {}),
+              ],
+            ),
           ),
         )
       ),

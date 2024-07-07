@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:uiux/catalouge.dart';
 import 'package:uiux/sign1/signin.dart';
+import 'package:uiux/styleslist/signlist.dart';
 
 class Signup1 extends StatefulWidget {
   const Signup1({super.key});
@@ -15,26 +16,46 @@ class _Signup1State extends State<Signup1> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () async{
-        return true;
+      onWillPop: () async {
+        // Navigate back to Catalogue when the back button is pressed
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => Signlist()),
+          ModalRoute.withName('/'),
+        );
+        return true; // Allow the back button press
       },
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(80),
           child: AppBar(
-            leading: IconButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>Catalouge()));
-            }, icon: Icon(Icons.arrow_back,color: Colors.white,)),
+            leading: Padding(
+              padding:EdgeInsets.only(top: 22),
+              child: IconButton(
+                onPressed: () {
+                  // Navigate back to Catalogue when the back button in AppBar is pressed
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => Signlist()),
+                    ModalRoute.withName('/'),
+                  );
+                },
+                icon: FaIcon(FontAwesomeIcons.caretLeft, color: Colors.white,size: 30,),
+              ),
+            ),
             backgroundColor: Colors.black,
             centerTitle: true,
             title: Padding(
-              padding:  EdgeInsets.only(top: 25),
-              child: Text('Basic style',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 30),
+              padding: EdgeInsets.only(top: 25),
+              child: Text(
+                'Basic style',
+                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 30),
               ),
             ),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(11)
-            ),),
+              borderRadius: BorderRadius.circular(11),
+            ),
+          ),
         ),
         body: SafeArea(
           child: Center(
@@ -78,7 +99,7 @@ class _Signup1State extends State<Signup1> {
                       ),
                       fillColor: Colors.grey.shade300,
                       filled: true,
-                      contentPadding: EdgeInsets.symmetric(vertical: 30,horizontal: 20),
+                      contentPadding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
                     ),
                   ),
                 ),
@@ -97,7 +118,7 @@ class _Signup1State extends State<Signup1> {
                       ),
                       fillColor: Colors.grey.shade300,
                       filled: true,
-                      contentPadding: EdgeInsets.symmetric(vertical: 30,horizontal: 20),
+                      contentPadding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
                     ),
                   ),
                 ),
@@ -117,7 +138,7 @@ class _Signup1State extends State<Signup1> {
                       ),
                       fillColor: Colors.grey.shade300,
                       filled: true,
-                      contentPadding: EdgeInsets.symmetric(vertical: 30,horizontal: 20),
+                      contentPadding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
                     ),
                   ),
                 ),
@@ -125,9 +146,7 @@ class _Signup1State extends State<Signup1> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 100),
                   child: ElevatedButton(
-                    onPressed: () {
-                      
-                    },
+                    onPressed: () {},
                     child: SizedBox(
                       width: double.infinity,
                       child: Text(
@@ -143,14 +162,23 @@ class _Signup1State extends State<Signup1> {
                     ),
                   ),
                 ),
-                SizedBox(height: 40,),
+                SizedBox(height: 40),
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text('Already have an account ?',style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold),),
-                    TextButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Signin1()));
-                    }, child: Text('Sign in',style: TextStyle(fontSize: 16,color: Colors.blue),))
+                    Text(
+                      'Already have an account ?',
+                      style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Signin1()));
+                      },
+                      child: Text(
+                        'Sign in',
+                        style: TextStyle(fontSize: 16, color: Colors.blue),
+                      ),
+                    ),
                   ],
                 ),
               ],

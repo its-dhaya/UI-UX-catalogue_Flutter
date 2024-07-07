@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:uiux/sign1/signin.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:uiux/sign1/signup.dart';
 
 class Signin1 extends StatefulWidget {
@@ -22,9 +22,12 @@ class _Signin1State extends State<Signin1> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(80),
           child: AppBar(
-            leading: IconButton(onPressed: (){
-              Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>Signup1()));
-            }, icon: Icon(Icons.arrow_back,color: Colors.white,)),
+            leading: Padding(
+              padding: EdgeInsets.only(top: 22),
+              child: IconButton(onPressed: (){
+                Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>Signup1()));
+              }, icon: FaIcon(FontAwesomeIcons.caretLeft,color: Colors.white,size: 30,)),
+            ),
             backgroundColor: Colors.black,
             centerTitle: true,
             title: Padding(

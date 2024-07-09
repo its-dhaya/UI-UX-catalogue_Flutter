@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:uiux/TopicBox.dart';
 import 'package:uiux/catalouge.dart';
 import 'package:uiux/sign1/signup.dart';
+import 'package:uiux/sign2/Buisnesssignup.dart';
 
 class Signlist extends StatefulWidget {
   const Signlist({super.key});
@@ -51,7 +52,12 @@ class _SignlistState extends State<Signlist> {
               SizedBox(height: 50,),
               TopicBox(onTap: (){
                 Navigator.push(context,MaterialPageRoute(builder: (context) => Signup1()));
-              }, title: 'Basic Style')
+              }, title: 'Basic Style'),
+              SizedBox(height: 15,),
+              TopicBox(onTap: (){
+              Navigator.push(context,MaterialPageRoute(builder: (context) => Buisnesssignup()));
+              },title: 'Buisness Style',
+              ),
             ],
           ),
         ),

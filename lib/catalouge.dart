@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:uiux/TopicBox.dart';
 import 'package:uiux/sign1/signup.dart';
+import 'package:uiux/styleslist/otplist.dart';
 import 'package:uiux/styleslist/signlist.dart';
 
 class Catalouge extends StatefulWidget {
@@ -15,7 +16,7 @@ class _CatalougeState extends State<Catalouge> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async{
-    return false;
+    return true;
       },
       child: Scaffold(
         appBar: PreferredSize(
@@ -23,7 +24,7 @@ class _CatalougeState extends State<Catalouge> {
           child: AppBar(
             automaticallyImplyLeading: false,
             centerTitle: true,
-            backgroundColor: Colors.grey.shade800,
+            backgroundColor: Colors.grey.shade700,
             title:const Row(
               children: [
                   Padding(
@@ -54,7 +55,9 @@ class _CatalougeState extends State<Catalouge> {
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Signlist()));
                   }),
                   SizedBox(height: 15),
-                  TopicBox(title: 'OTP UI', onTap: (){} ),
+                  TopicBox(title: 'OTP UI', onTap: (){
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Otplist()));
+                  } ),
                   SizedBox(height: 15),
                   TopicBox(title: 'Home UI', onTap: () {}),
                   SizedBox(height: 15),

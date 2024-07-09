@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:uiux/OTP/OTP1.dart';
+import 'package:uiux/OTP/num1.dart';
 import 'package:uiux/TopicBox.dart';
 import 'package:uiux/catalouge.dart';
 import 'package:uiux/sign1/signup.dart';
 
-class Signlist extends StatefulWidget {
-  const Signlist({super.key});
+class Otplist extends StatefulWidget {
+  const Otplist({super.key});
 
   @override
-  State<Signlist> createState() => _SignlistState();
+  State<Otplist> createState() => _OtplistState();
 }
 
-class _SignlistState extends State<Signlist> {
+class _OtplistState extends State<Otplist> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -34,7 +36,7 @@ class _SignlistState extends State<Signlist> {
             backgroundColor: Colors.black,
             title: Padding(
               padding: EdgeInsets.only(top: 25),
-              child: Text('Sign up/in Styles',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 30),
+              child: Text('OTP Styles',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,fontSize: 30),
               ),
             ),
             centerTitle: true,
@@ -50,7 +52,7 @@ class _SignlistState extends State<Signlist> {
             children: [
               SizedBox(height: 50,),
               TopicBox(onTap: (){
-                Navigator.push(context,MaterialPageRoute(builder: (context) => Signup1()));
+                Navigator.push(context,MaterialPageRoute(builder: (context) => Num1()));
               }, title: 'Basic Style')
             ],
           ),

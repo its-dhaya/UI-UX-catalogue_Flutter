@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:uiux/sign2/Buisnesssignin.dart';
 
 class Buisnessacc extends StatefulWidget {
@@ -27,17 +28,152 @@ class _BuisnessaccState extends State<Buisnessacc> {
       iconSize: 30,),
 
       ),
-      body: Column(children:<Widget> [
-
-        SizedBox(height: 300,
-        child: Center(
-          child: Image.asset('assets/images/Buisness3.jpeg',
-          width:500 ,
-          height: 500,
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(children:<Widget> [
+          SizedBox(height: 10,),
+          Center(
+            child: Image.asset('assets/images/Buisness3.jpeg',
+            fit: BoxFit.cover,
+            height: 320,
+            width: 320,),
+          
           ),
-        ),
-        )
-      ],),
+          SizedBox(height: 5,),
+          Column(
+            children: [
+              Container(
+                child:Text('Sign in to your account',
+                style:GoogleFonts.poppins(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),
+                ) ,
+                ),
+                SizedBox(height: 5),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                          borderSide: BorderSide(color: Colors.black, width: 1),
+                        ),
+                        hintText: 'Enter your email',
+                        hintStyle: GoogleFonts.inter(
+                            fontSize: 17, color: Colors.grey.shade600)),
+                  ),
+                ),
+                SizedBox(height: 5),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                          borderSide: BorderSide(color: Colors.black, width: 1),
+                        ),
+                        hintText: 'Enter your password',
+                        hintStyle: GoogleFonts.inter(
+                            fontSize: 17, color: Colors.grey.shade600)),
+                  ),
+                ),
+                 SizedBox(height: 15),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal:45,),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Buisnesssignin()));
+                        },
+                        child: SizedBox(
+                          width: double.infinity,
+                          child: Text(
+                            'Sign in',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.poppins(color: Colors.white,fontSize: 20),
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(45),
+                          ),
+                          padding: EdgeInsets.symmetric(vertical: 10),  
+                          backgroundColor: Color(0xFF4D78EA),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 5,),
+                    Text('Or',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 15),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal:45,),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Buisnesssignin()));
+                        },
+                        child: SizedBox(
+                          width: double.infinity,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min ,
+                            children: [
+                              FaIcon(FontAwesomeIcons.apple,color: Colors.white,),
+                              SizedBox(width: 8,),
+                              Text(
+                                'Continue with apple' , 
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.poppins(color: Colors.white,fontSize: 15),
+                              ),
+                            ],
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(color: Colors.black),
+                            borderRadius: BorderRadius.circular(45),
+                          ),
+                          padding: EdgeInsets.symmetric(vertical: 10),  
+                          backgroundColor: Colors.black,
+                        ),
+                      ),
+                    ),
+                     SizedBox(height: 15),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal:45,),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Buisnesssignin()));
+                        },
+                        child:  SizedBox(
+                          width: double.infinity,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min ,
+                            children: [
+                              SizedBox(
+                                height: 24,width: 30,
+                                child: Image.asset('assets/images/google.png')),
+                              SizedBox(width: 8,),
+                              Text(
+                                'Continue with Google' , 
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.poppins(color: Colors.black,fontSize: 15),
+                              ),
+                            ],
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(45),
+                          ),
+                          padding: EdgeInsets.symmetric(vertical: 10),  
+                          backgroundColor: Colors.grey.shade300,
+                        ),
+                      ),
+                    ),
+                  
+            ],
+          )
+        ],),
+      ),
 
     );
   }

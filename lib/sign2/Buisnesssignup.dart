@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uiux/sign2/Buisnesssignin.dart';
+import 'package:uiux/styleslist/signlist.dart';
 
 class Buisnesssignup extends StatefulWidget {
   const Buisnesssignup({super.key});
@@ -19,7 +21,9 @@ class _BuisnesssignupState extends State<Buisnesssignup> {
       backgroundColor: Color(0xFF4D78EA),
       centerTitle: true,
       automaticallyImplyLeading: false,
-      leading: IconButton(icon:FaIcon(FontAwesomeIcons.caretLeft) ,onPressed: (){},color: Colors.white,iconSize: 30,),
+      leading: IconButton(icon:FaIcon(FontAwesomeIcons.caretLeft) ,onPressed: (){
+        Navigator.push(context,MaterialPageRoute(builder: (context)=>Signlist()));
+      },color: Colors.white,iconSize: 30,),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -55,7 +59,7 @@ class _BuisnesssignupState extends State<Buisnesssignup> {
                     padding: EdgeInsets.symmetric(horizontal:16,),
                     child: ElevatedButton(
                       onPressed: () {
-                        
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Buisnesssignin()));
                       },
                       child: SizedBox(
                         width: double.infinity,

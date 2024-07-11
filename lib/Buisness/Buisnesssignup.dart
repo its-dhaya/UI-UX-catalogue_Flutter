@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:uiux/sign2/Buisnesssignin.dart';
+import 'package:uiux/Buisness/Buisnesssignin.dart';
 import 'package:uiux/styleslist/signlist.dart';
 
 class Buisnesssignup extends StatefulWidget {
@@ -32,8 +32,8 @@ class _BuisnesssignupState extends State<Buisnesssignup> {
           Center(
             child: ClipOval(child: Image.asset('assets/images/Buisness1.jpeg',
             fit:BoxFit.cover,
-            height: 354,
-            width: 354,
+            height: 320,
+            width: 320,
             )
             ),
           ),
@@ -59,7 +59,6 @@ class _BuisnesssignupState extends State<Buisnesssignup> {
                     padding: EdgeInsets.symmetric(horizontal:16,),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Buisnesssignin()));
                       },
                       child: SizedBox(
                         width: double.infinity,
@@ -78,6 +77,35 @@ class _BuisnesssignupState extends State<Buisnesssignup> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 5,),
+Row(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Buisnesssignin()),
+        );
+      },
+      child: Text(
+        'Next page',
+        style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+      ),
+    ),
+    SizedBox(width: 3),
+    IconButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Buisnesssignin()),
+        );
+      },
+      icon: FaIcon(FontAwesomeIcons.arrowRight, color: Colors.blue),
+    ),
+  ],
+)
+
         ],
       )
     );

@@ -29,7 +29,7 @@ class _CatalougeState extends State<Catalouge> {
               children: [
                   Padding(
                     padding:  EdgeInsets.only(top: 25),
-                    child: Text(  
+                    child: Text(
                     'Catalogue',
                           style: TextStyle(
                           fontWeight: FontWeight.bold,

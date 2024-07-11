@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:uiux/sign2/Buisnessacc.dart';
-import 'package:uiux/sign2/Buisnesssignup.dart';
+import 'package:uiux/Buisness/Buisnessacc.dart';
+import 'package:uiux/Buisness/Buisnesssignup.dart';
 
 class Buisnesssignin extends StatefulWidget {
   const Buisnesssignin({super.key});
@@ -43,8 +43,8 @@ class _BuisnesssigninState extends State<Buisnesssignin> {
                 child: Image.asset(
                   'assets/images/Buisness2.jpeg',
                   fit: BoxFit.cover,
-                  height: 320,
-                  width: 340,
+                  height: 250,
+                  width: 250,
                 ),
               ),
             ),
@@ -105,7 +105,6 @@ class _BuisnesssigninState extends State<Buisnesssignin> {
                       padding: EdgeInsets.symmetric(horizontal:45,),
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Buisnesssignin()));
                         },
                         child: SizedBox(
                           width: double.infinity,
@@ -137,10 +136,36 @@ class _BuisnesssigninState extends State<Buisnesssignin> {
                         Text('Already have an account ?',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
                         SizedBox(width: 2,),
                         TextButton(onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Buisnessacc()));
                         }, child: Text('Sign in',style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),))
                       ],
-                    )
+                    ),
+                    Row(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Buisnessacc()),
+        );
+      },
+      child: Text(
+        'Next page',
+        style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+      ),
+    ),
+    SizedBox(width: 3),
+    IconButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Buisnessacc()),
+        );
+      },
+      icon: FaIcon(FontAwesomeIcons.arrowRight, color: Colors.blue),
+    ),
+  ],
+)
           ],
         ),
       ),

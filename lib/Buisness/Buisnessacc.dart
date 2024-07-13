@@ -175,7 +175,7 @@ class _BuisnessaccState extends State<Buisnessacc> {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder:(context)=>Businesshome()));
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>BusinessHome()));
                 },
                 child: Text(
           'Next page',
@@ -185,7 +185,7 @@ class _BuisnessaccState extends State<Buisnessacc> {
               SizedBox(width: 3),
               IconButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder:(context)=>Businesshome()));
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>BusinessHome()));
                 },
                 icon: FaIcon(FontAwesomeIcons.arrowRight, color: Colors.blue),
               ),

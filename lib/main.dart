@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:uiux/catalouge.dart';
-import 'package:uiux/styleslist/signlist.dart';
 
 void main() {
   runApp(const MyApp());

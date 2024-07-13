@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uiux/Buisness/Buisneeshome.dart';
 import 'package:uiux/Buisness/Buisnesssignin.dart';
 
 class Buisnessacc extends StatefulWidget {
@@ -174,6 +175,7 @@ class _BuisnessaccState extends State<Buisnessacc> {
             children: [
               GestureDetector(
                 onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>Businesshome()));
                 },
                 child: Text(
           'Next page',
@@ -183,6 +185,7 @@ class _BuisnessaccState extends State<Buisnessacc> {
               SizedBox(width: 3),
               IconButton(
                 onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>Businesshome()));
                 },
                 icon: FaIcon(FontAwesomeIcons.arrowRight, color: Colors.blue),
               ),

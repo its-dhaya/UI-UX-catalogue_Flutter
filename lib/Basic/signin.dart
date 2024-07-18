@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:uiux/sign1/signup.dart';
+import 'package:uiux/Basic/num1.dart';
+import 'package:uiux/Basic/signup.dart';
 
 class Signin1 extends StatefulWidget {
   const Signin1({super.key});
@@ -16,6 +17,7 @@ class _Signin1State extends State<Signin1> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async{
+        Navigator.push(context, MaterialPageRoute(builder:(context)=>Signup1()));
         return true;
       },
       child: Scaffold(
@@ -44,7 +46,7 @@ class _Signin1State extends State<Signin1> {
             child: Center(
               child: Column(
                 children: [
-                  SizedBox(height: 75),
+                  SizedBox(height: 70),
                   Padding(
                     padding: EdgeInsets.only(left: 50),
                   ),
@@ -66,9 +68,9 @@ class _Signin1State extends State<Signin1> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 50),
+                  SizedBox(height: 40),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Reduced vertical padding
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 7), // Reduced vertical padding
                     child: TextField(
                       decoration: InputDecoration(
                         hintStyle: TextStyle(fontSize: 20),
@@ -87,7 +89,7 @@ class _Signin1State extends State<Signin1> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Reduced vertical padding
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 7), // Reduced vertical padding
                     child: TextField(
                       keyboardType: TextInputType.number,
                       obscureText: true,
@@ -107,7 +109,7 @@ class _Signin1State extends State<Signin1> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 35),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 100),
                     child: ElevatedButton(
@@ -129,16 +131,38 @@ class _Signin1State extends State<Signin1> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 100,),
+                  SizedBox(height: 50,),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text("Don't have an account ?",style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold),),
                       TextButton(onPressed: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => Signup1()));
                       }, child: Text('Sign up',style: TextStyle(fontSize: 16,color: Colors.blue),))
                     ],
                   ),
+                  SizedBox(height: 30),
+                
+            Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>Num1()));
+                },
+                child: Text(
+          'Next page',
+          style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+                ),
+              ),
+              SizedBox(width: 3),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>Num1()));
+                },
+                icon: FaIcon(FontAwesomeIcons.arrowRight, color: Colors.blue),
+              ),
+            ],
+          )
                 ],
               ),
             ),

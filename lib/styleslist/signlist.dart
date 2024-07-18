@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:uiux/TopicBox.dart';
 import 'package:uiux/catalouge.dart';
-import 'package:uiux/sign1/signup.dart';
+import 'package:uiux/Basic/signup.dart';
 import 'package:uiux/Buisness/Buisnesssignup.dart';
 
 class Signlist extends StatefulWidget {

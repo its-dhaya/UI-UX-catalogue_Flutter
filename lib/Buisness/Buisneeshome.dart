@@ -4,6 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:math';
 
+import 'package:url_launcher/url_launcher.dart';
+
 class BusinessHome extends StatefulWidget {
   const BusinessHome({super.key});
 
@@ -39,7 +41,13 @@ class _BusinessHomeState extends State<BusinessHome> {
         actions: [
           Padding(
             padding: EdgeInsets.only(right: 20),
-            child: FaIcon(FontAwesomeIcons.solidBell, color: Colors.white, size: 25),
+            child:Column(
+              children: [
+                TextButton(onPressed: (){launchUrl(Uri.parse("https://github.com/its-dhaya/UI-UX-catalogue_Flutter/tree/main/lib/Buisness"));}, child: Text('Get the code',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
+                )
+                ),
+              ],
+            )
           ),
         ],
       ),

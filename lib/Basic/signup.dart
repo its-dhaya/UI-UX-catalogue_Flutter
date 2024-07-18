@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:uiux/catalouge.dart';
-import 'package:uiux/sign1/signin.dart';
+import 'package:uiux/Basic/signin.dart';
 import 'package:uiux/styleslist/signlist.dart';
 
 class Signup1 extends StatefulWidget {
@@ -20,7 +20,7 @@ class _Signup1State extends State<Signup1> {
         // Navigate back to Catalogue when the back button is pressed
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => Signlist()),
+          MaterialPageRoute(builder: (context) => Catalouge()),
           ModalRoute.withName('/'),
         );
         return true; // Allow the back button press
@@ -36,7 +36,7 @@ class _Signup1State extends State<Signup1> {
                   // Navigate back to Catalogue when the back button in AppBar is pressed
                   Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => Signlist()),
+                    MaterialPageRoute(builder: (context) => Catalouge()),
                     ModalRoute.withName('/'),
                   );
                 },
@@ -62,7 +62,7 @@ class _Signup1State extends State<Signup1> {
             child: Center(
               child: Column(
                 children: [
-                  SizedBox(height: 50),
+                  SizedBox(height: 40),
                   Padding(
                     padding: EdgeInsets.only(left: 50),
                   ),
@@ -84,7 +84,7 @@ class _Signup1State extends State<Signup1> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 50),
+                  SizedBox(height: 35),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Reduced vertical padding
                     child: TextField(
@@ -105,7 +105,7 @@ class _Signup1State extends State<Signup1> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Reduced vertical padding
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 7), // Reduced vertical padding
                     child: TextField(
                       decoration: InputDecoration(
                         hintStyle: TextStyle(fontSize: 20),
@@ -124,7 +124,7 @@ class _Signup1State extends State<Signup1> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Reduced vertical padding
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 7), // Reduced vertical padding
                     child: TextField(
                       keyboardType: TextInputType.number,
                       obscureText: true,
@@ -164,7 +164,7 @@ class _Signup1State extends State<Signup1> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 40),
+                  SizedBox(height: 20),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -174,7 +174,6 @@ class _Signup1State extends State<Signup1> {
                       ),
                       TextButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => Signin1()));
                         },
                         child: Text(
                           'Sign in',
@@ -182,7 +181,29 @@ class _Signup1State extends State<Signup1> {
                         ),
                       ),
                     ],
+                    
                   ),
+            Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>Signin1()));
+                },
+                child: Text(
+          'Next page',
+          style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+                ),
+              ),
+              SizedBox(width: 3),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>Signin1()));
+                },
+                icon: FaIcon(FontAwesomeIcons.arrowRight, color: Colors.blue),
+              ),
+            ],
+          )
                 ],
               ),
             ),

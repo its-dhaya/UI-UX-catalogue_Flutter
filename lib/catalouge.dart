@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:uiux/Buisness/Buisnesssignup.dart';
+import 'package:uiux/Food/Food1.dart';
 import 'package:uiux/TopicBox.dart';
-import 'package:uiux/sign1/signup.dart';
+import 'package:uiux/Basic/signup.dart';
 import 'package:uiux/styleslist/otplist.dart';
 import 'package:uiux/styleslist/signlist.dart';
 
@@ -44,6 +46,7 @@ class _CatalougeState extends State<Catalouge> {
               borderRadius: BorderRadius.circular(11)
             ),
             ),
+            
         ),
         backgroundColor: Colors.grey.shade500,
         body:SingleChildScrollView(
@@ -51,15 +54,17 @@ class _CatalougeState extends State<Catalouge> {
             child: Column(
               children: [
                 SizedBox(height: 50),
-                  TopicBox(title: 'Signup UI', onTap: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Signlist()));
+                  TopicBox(title: 'Basic UI', onTap: () {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Signup1()));
                   }),
                   SizedBox(height: 15),
-                  TopicBox(title: 'OTP UI', onTap: (){
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Otplist()));
+                  TopicBox(title: 'Business UI', onTap: (){
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Buisnesssignup()));
                   } ),
                   SizedBox(height: 15),
-                  TopicBox(title: 'Home UI', onTap: () {}),
+                  TopicBox(title: 'Food app UI', onTap: () {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Food1()));
+                  }),
                   SizedBox(height: 15),
                   TopicBox(title: 'Chat UI', onTap: () {}),
               ],

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:uiux/OTP/OTP1.dart';
-import 'package:uiux/sign1/signup.dart';
-import 'package:uiux/styleslist/otplist.dart';
+import 'package:uiux/Basic/OTP1.dart';
+import 'package:uiux/Basic/signin.dart';
 
 class Num1 extends StatefulWidget {
   const Num1({super.key});
@@ -20,7 +19,7 @@ class _Num1State extends State<Num1> {
     return WillPopScope(
       onWillPop: () async {
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Otplist()));
+            context, MaterialPageRoute(builder: (context) => Signin1()));
         return true;
       },
       child: Scaffold(
@@ -32,7 +31,7 @@ class _Num1State extends State<Num1> {
               child: IconButton(
                 onPressed: () {
                   Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (context) => Otplist()));
+                      context, MaterialPageRoute(builder: (context) => Signin1()));
                 },
                 icon: FaIcon(
                   FontAwesomeIcons.caretLeft,
@@ -160,6 +159,28 @@ class _Num1State extends State<Num1> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 187,),
+                  Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>Otp1()));
+                },
+                child: Text(
+          'Next page',
+          style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+                ),
+              ),
+              SizedBox(width: 3),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>Otp1()));
+                },
+                icon: FaIcon(FontAwesomeIcons.arrowRight, color: Colors.blue),
+              ),
+            ],
+          )
                 ],
               ),
             ),

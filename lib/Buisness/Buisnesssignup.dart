@@ -18,7 +18,11 @@ class _BuisnesssignupState extends State<Buisnesssignup> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>Catalouge()));
+ Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => Catalouge()),
+          ModalRoute.withName('/'),
+        );
         return true;
       },
       child: Scaffold(

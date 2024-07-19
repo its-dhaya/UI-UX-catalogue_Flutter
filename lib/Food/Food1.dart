@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uiux/Food/Food2.dart';
 import 'package:uiux/catalouge.dart';
 
 class Food1 extends StatefulWidget {
@@ -15,7 +16,11 @@ class _Food1State extends State<Food1> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: ()  async{
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>Catalouge()));
+ Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => Catalouge()),
+          ModalRoute.withName('/'),
+        );
         return true; // Prevent popping the screen
       },
       child: Scaffold(
@@ -149,6 +154,7 @@ class _Food1State extends State<Food1> {
         children: [
       GestureDetector(
         onTap: () {
+          Navigator.push(context,MaterialPageRoute(builder: (context)=>Food2()));
         },
         child: Text(
           'Next page',
@@ -158,7 +164,7 @@ class _Food1State extends State<Food1> {
       SizedBox(width: 3),
       IconButton(
         onPressed: () {
-      
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>Food2()));
         },
         icon: FaIcon(FontAwesomeIcons.arrowRight, color: Colors.green.shade800),
       ),
